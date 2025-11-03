@@ -1,8 +1,68 @@
-const About = () => {
+import React from "react";
+import myPhoto from "../images/giteaa.jpg";
+import barcaLogo from "../images/visca.jpg"; // logo Barca untuk background
+
+const About: React.FC = () => {
   return (
-    <div className="max-w-2xl mx-auto bg-white shadow-md p-6 rounded-xl mt-8">
-      <h2 className="text-2xl font-bold mb-3 text-blue-700">About This App</h2>
-      <p className="text-gray-700 leading-relaxed">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam ut rerum, consectetur eaque aperiam quam ad minima deleniti non veniam minus animi. Architecto ratione eaque natus fuga quisquam laboriosam totam.</p>
+    <div
+      className="relative flex items-center justify-center min-h-screen p-8 overflow-hidden"
+      style={{
+        background: "linear-gradient(to bottom right, #0a1e5a, #7c0a02)",
+      }}
+    >
+      {/* LOGO BARCA SAMAR */}
+      <img
+        src={barcaLogo}
+        alt="Background FC Barcelona"
+        className="absolute inset-0 w-full h-full object-contain opacity-10 pointer-events-none select-none"
+        style={{
+          zIndex: 0,
+          filter: "blur(1px)",
+          transform: "scale(1.2)",
+        }}
+      />
+
+      {/* KONTEN UTAMA */}
+      <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start max-w-6xl w-full space-y-8 md:space-y-0 md:space-x-12">
+
+        {/* FOTO DI KIRI */}
+        <div className="flex-1 flex justify-center md:justify-end">
+          <div className="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-yellow-400 shadow-xl">
+            <img
+              src={myPhoto}
+              alt="Gita Gloria Sabatini Alaidi"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        {/* DATA DIRI DI KANAN */}
+        <div className="flex-1 text-yellow-300 leading-relaxed">
+          <h2 className="text-4xl font-extrabold text-yellow-400 mb-3 drop-shadow-lg">
+            Gita Gloria Sabatini Alaidi
+          </h2>
+
+          <p className="italic mb-6 text-lg text-yellow-200">
+          In a complicated relationship with TypeScript🙃
+
+
+          </p>
+
+          <ul className="space-y-2 text-xl italic text-yellow-100">
+            <li><b>Nama Lengkap:</b> Gita Gloria Sabatini Alaidi</li>
+            <li><b>Tanggal Lahir:</b> 25 Januari 2004</li>
+            <li><b>Alamat:</b> Palu, Central Sulawesi</li>
+            <li><b>Hobby:</b> Tidur 😴</li>
+            <li><b>Email:</b> s22129043@student.unklab.ac.id</li>
+            <li><b>No. HP:</b> 085343559568</li>
+          </ul>
+
+          <p className="mt-10 italic text-1xl font-extrabold text-yellow-200 drop-shadow-md">
+          Kalo mimpinya besar tidur nya gaboleh sedikit🤗
+💙❤
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
